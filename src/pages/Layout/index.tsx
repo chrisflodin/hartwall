@@ -16,7 +16,7 @@ function Layout() {
       <div className={contentStyle}>
         <Outlet />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }
