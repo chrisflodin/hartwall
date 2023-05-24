@@ -1,0 +1,31 @@
+.mainStyle {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #38b271;
+  background-image: linear-gradient(111deg, #38b271 0%, #f6e05e 44%, #f6e05e 70%, #38b271 100%);
+}
+
+.navStyle {
+  height: 90px;
+  color: var(--black);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentStyle {
+  height: 100%;
+  width: var(--standard-content-width);
+
+  display: flex;
+  justify-self: stretch;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding-bottom: 20px;
+}
