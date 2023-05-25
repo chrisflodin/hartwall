@@ -1,16 +1,10 @@
 .mainStyle {
   height: 100%;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
 }
 
 .contentStyle {
   height: 100%;
-  width: var(--standard-content-width);
+  width: 100%;
 
   display: flex;
   justify-self: stretch;
