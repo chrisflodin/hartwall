@@ -1,20 +1,59 @@
-.containerStyling {
-  height: 360px;
-  width: 100%;
+.topFooter {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  flex-grow: 1;
-
-  color: var(--white);
-  background-color: var(--background-green);
+  width: 100%;
 }
 
-.footerSectionStyling {
+.topFooter > h1 {
+  font-family: 'Spicy Rice';
+  font-size: 20rem;
+  margin-bottom: -40px;
+  z-index: 1;
+}
+
+.topFooter > p {
+  margin-top: 10px;
+  font-size: 4rem;
+  z-index: 1;
+}
+
+.socialMediaContainer {
   display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
-.footerTextStyling {
-  font-size: 2.2rem;
-  font-weight: 900;
+$circle-radius: 60px;
+
+.blueCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue);
+  width: $circle-radius * 2;
+  height: $circle-radius * 2;
+  border-radius: $circle-radius;
+  margin: 20px;
+  z-index: 1;
+}
+
+.fruityImage {
+  margin-top: -350px;
+}
+
+.bottomFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 800px;
+  background-color: var(--blue);
+  padding-top: 10rem;
+}
+
+.bottomFooter > p {
+  color: white;
+  font-size: 12rem;
+  margin-bottom: -7rem;
 }

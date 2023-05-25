@@ -1,15 +1,30 @@
-import styling from './index.module.scss'
+import styles from './index.module.scss'
 import FooterLinks from './FooterLinks'
 import FooterSocialLinks from './FooterSocialLinks'
-
-const { containerStyling, footerSectionStyling, footerTextStyling } = styling
+import { FacebookLogo, InstagramLogo } from '../../../components/SVGs/Logos'
+import { motion } from 'framer-motion'
 
 function Footer() {
   return (
-    <footer className={containerStyling}>
-      <FooterSocialLinks />
-      <FooterLinks />
-    </footer>
+    <>
+      <div className={styles.topFooter}>
+        <h1>LIMONADI</h1>
+        <div className={styles.socialMediaContainer}>
+          <motion.div className={styles.blueCircle} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <InstagramLogo />
+          </motion.div>
+          <motion.div className={styles.blueCircle} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <FacebookLogo />
+          </motion.div>
+        </div>
+        <p>Tarjoile jäähdytettynä seurajuomana! </p>
+        <img src="assets/images/FruityFooter.png" width={'100%'} className={styles.fruityImage} />
+      </div>
+      <div className={styles.bottomFooter}>
+        <p>Me virkistämme</p>
+        <p>Soumea.</p>
+      </div>
+    </>
   )
 }
 
