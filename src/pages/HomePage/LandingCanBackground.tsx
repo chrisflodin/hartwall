@@ -21,15 +21,15 @@ function LandingCanBackground({ backgroundColor, index, hovered }: LandingCanBac
 
   const getWidth = () => {
     if (hovered) return '100%'
-    // if (!hovered && !noneHovered) return '25%'
-    // if (noneHovered) return '25%'
+    if (!hovered && !noneHovered) return '0%'
+    if (noneHovered) return '25%'
     return '25%'
   }
 
   return (
     <>
       <motion.div
-        animate={{ width: getWidth(), zIndex: hovered ? 1 : 0, position: hovered ? 'relative' : 'static' }}
+        animate={{ width: getWidth() }}
         onHoverStart={(e) => updateHoveredCan(index, true)}
         onHoverEnd={(e) => updateHoveredCan(index, false)}
         style={styling}
