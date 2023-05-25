@@ -12,10 +12,8 @@ interface LayoutProps {
 function Layout() {
   return (
     <main className={mainStyle}>
-      <NavBar />
-      <div className={contentStyle}>
-        <Outlet />
-      </div>
+      {/* <NavBar /> */}
+      <Outlet />
       {/* <Footer /> */}
     </main>
   )
