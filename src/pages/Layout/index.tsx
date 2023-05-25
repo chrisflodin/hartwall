@@ -11,13 +11,15 @@ interface LayoutProps {
 
 function Layout() {
   return (
-    <main className={mainStyle}>
+    <>
       <NavBar />
-      <div className={contentStyle}>
-        <Outlet />
-      </div>
-      {/* <Footer /> */}
-    </main>
+      <main className={mainStyle}>
+        <div className={contentStyle}>
+          <Outlet />
+        </div>
+        {/* <Footer /> */}
+      </main>
+    </>
   )
 }
 

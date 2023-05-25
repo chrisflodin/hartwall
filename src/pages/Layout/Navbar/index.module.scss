@@ -1,26 +1,27 @@
 .navbarContainer {
+  position: absolute;
   display: flex;
   align-items: center;
-
-  width: var(--standard-content-width);
-  padding: 35px 0 10px 0;
+  width: 100%;
+  z-index: 3;
+  padding-top: 35px;
 }
 
-.homeLayout {
-  justify-content: center;
-}
-
-.creationLayout {
-  justify-content: center;
-}
-
-.codeInputContainer {
+.sideNav {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 150px;
 }
 
-.inputContainerText {
-  font-size: 2.2rem;
-  font-weight: 700;
+.link {
+  font-size: 2rem;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+.hartwallLogo {
+  justify-self: center;
 }

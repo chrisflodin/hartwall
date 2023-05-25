@@ -15,15 +15,23 @@ function Navbar() {
 
   const cx = classNames({
     [`${styles.navbarContainer}`]: true,
-    [`${styles.homeLayout}`]: location && location.pathname === '/',
   })
 
   return (
     <nav className={cx}>
+      <div className={styles.sideNav}>
+        <p className={styles.link}>Joumat</p>
+        <p className={styles.link}>Yritis</p>
+        <p className={styles.link}>Vastuulisuus</p>
+        <p className={styles.link}>Inspiroidu</p>
+      </div>
       <Link to="/">
-        <HartwallLogo className={styles.smileysLogo} />
+        <HartwallLogo className={styles.hartwallLogo} />
       </Link>
-      <div className={styles.leftNav}>
+      <div className={styles.sideNav}>
+        <p className={styles.link}>Ota yhteyttä</p>
+        <p className={styles.link}>Ammattiliasille</p>
+        <p className={styles.link}>Export</p>
         <SearchIcon />
       </div>
     </nav>
