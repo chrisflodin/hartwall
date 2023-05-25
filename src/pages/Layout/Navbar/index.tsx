@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
-import { HartwallLogo } from '../../../components/Logos/Logos'
+import { HartwallLogo, YouTubeLogo } from '../../../components/SVGs/Logos'
+import { SearchIcon } from '../../../components/SVGs/Icons'
 import Input from '../../../components/Input'
 import styles from './index.module.scss'
 import { Button } from '../../../components/Button'
@@ -14,14 +15,17 @@ function Navbar() {
 
   const cx = classNames({
     [`${styles.navbarContainer}`]: true,
-    [`${styles.homeLayout}`]: location && location.pathname === '/'
+    [`${styles.homeLayout}`]: location && location.pathname === '/',
   })
 
   return (
     <nav className={cx}>
       <Link to="/">
-        <HartwallLogo color="black" className={styles.smileysLogo} />
+        <HartwallLogo className={styles.smileysLogo} />
       </Link>
+      <div className={styles.leftNav}>
+        <SearchIcon />
+      </div>
     </nav>
   )
 }

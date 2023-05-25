@@ -28,17 +28,20 @@ function FlavourDisplay() {
       <ul className={styles.listContainer}>
         {FLAVOURS.map((flavour, i) => {
           return (
-            <motion.li
+            <li
               className={styles.itemContainer}
               key={i}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               onClick={() => {
                 handleClickFlavour(flavour)
               }}
             >
-              <img alt={`Can of ${flavour}`} src={`../../assets/images/${flavour}.png`} />
-            </motion.li>
+              <motion.img
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                alt={`Can of ${flavour}`}
+                src={`../../assets/images/${flavour}.png`}
+              />
+            </li>
           )
         })}
       </ul>
