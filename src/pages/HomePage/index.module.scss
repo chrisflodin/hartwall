@@ -5,11 +5,26 @@
 
 .tabContainer {
   display: flex;
+  justify-content: space-evenly;
+  gap: 2px;
 }
 
 .backgroundContainer {
-  height: 600px;
+  position: relative;
+  height: 650px;
   width: 100%;
   display: flex;
   background-color: orange;
+  margin-bottom: 20px;
+}
+
+.can_image_container {
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
 }

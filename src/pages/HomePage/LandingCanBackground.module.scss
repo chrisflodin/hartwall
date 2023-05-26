@@ -1,7 +1,16 @@
 .landing_can_container {
+  position: relative;
   height: 100%;
   width: 25%;
-  background-color: black;
   flex-grow: 1;
   flex-shrink: 1;
+  z-index: 1;
+}
+
+.can_expander {
+  border: 1px solid purple;
+}
+
+.absolute {
+  position: absolute;
 }

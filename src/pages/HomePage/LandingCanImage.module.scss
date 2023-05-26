@@ -2,6 +2,8 @@
 }
 
 .can_image_wrapper {
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 25%;
 }

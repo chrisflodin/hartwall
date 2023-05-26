@@ -8,11 +8,12 @@ export enum Colors {
 export interface CanMapValue {
   primaryColor: Colors
   hovered: boolean
+  flavour: string
 }
 
 export const CanMap = new Map<number, CanMapValue>()
 
-CanMap.set(0, { primaryColor: Colors.YELLOW, hovered: false })
-CanMap.set(1, { primaryColor: Colors.GREEN, hovered: false })
-CanMap.set(2, { primaryColor: Colors.BLUE, hovered: false })
-CanMap.set(3, { primaryColor: Colors.RED, hovered: false })
+CanMap.set(0, { primaryColor: Colors.YELLOW, hovered: false, flavour: 'Apple' })
+CanMap.set(1, { primaryColor: Colors.GREEN, hovered: false, flavour: 'Pear' })
+CanMap.set(2, { primaryColor: Colors.BLUE, hovered: false, flavour: 'Raspberry' })
+CanMap.set(3, { primaryColor: Colors.RED, hovered: false, flavour: 'Strawberry' })

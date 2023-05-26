@@ -1,23 +1,24 @@
 import { motion } from 'framer-motion'
 import styles from './LandingCanImage.module.scss'
-import { useState } from 'react'
-import { FLAVOURS } from '../../consts/flavours'
 
-interface LandingCanImageProps {}
+interface LandingCanImageProps {
+  backgroundColor: string
+  index: number
+  hovered: boolean
+  flavour: string
+  anyHovered: boolean
+}
 
-function LandingCanImage() {
-  const [currentFlavour, setCurrentFlavour] = useState(FLAVOURS[0])
-  const [isHovered, setIsHovered] = useState(false)
-
-  const styling = {}
-
+function LandingCanImage({ backgroundColor, index, hovered, flavour, anyHovered }: LandingCanImageProps) {
   return (
-    <div className={styles.landingCanWrapper}>
+    <div className={styles.can_image_wrapper}>
       <motion.img
-        alt={`Can of ${currentFlavour}`}
-        src={`../../assets/images/${currentFlavour}.png`}
-        key={FLAVOURS.indexOf(currentFlavour)}
+        alt={`Can of ${flavour}`}
+        src={`../../assets/images/${flavour}.png`}
+        key={index}
         initial={{ opacity: 1 }}
+        animate={{ opacity: anyHovered ? 0 : 1, y: anyHovered ? 50 : 0 }}
+        transition={{ duration: 0.2 * (Math.random() + 0.7), ease: 'easeIn' }}
       />
     </div>
   )
