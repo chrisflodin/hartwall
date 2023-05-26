@@ -14,7 +14,7 @@ interface LandingCanDetailsProps {
 
 function LandingCanDetails({ flavour, index, hovered, anyHovered, text }: LandingCanDetailsProps) {
   const animate = { opacity: hovered ? 1 : 0, y: hovered ? 20 : 0 }
-  const initial = { y: 0 }
+  const initial = { opacity: 0 }
   const exit = { opacity: 0 }
   const transition = { duration: anyHovered ? 0.3 : 0.3, delay: anyHovered ? 0.3 : 0, ease: 'easeOut' }
 
