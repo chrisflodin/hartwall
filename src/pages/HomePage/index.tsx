@@ -7,6 +7,7 @@ import LandingCanBackgroundTab from './LandingCanBackgroundTab'
 import LandingCanImage from './LandingCanImage'
 import LandingCanBackgroundDetail from './LandingCanDetails'
 import LandingCanLargeImage from './LandingCanDetails'
+import FlavourCarousel from '../../components/FlavourCarousel'
 
 function HomePage() {
   const { canMap, anyHovered, updateHoveredCan }: IHeroContext = useContext(HeroContext)
@@ -50,14 +51,17 @@ function HomePage() {
   ))
 
   return (
-    <div className={styles.heroContainer}>
-      <div className={styles.backgroundContainer}>
-        {canBackgrounds}
-        <div className={styles.can_image_container}>{canImages}</div>
+    <>
+      <div className={styles.heroContainer}>
+        <div className={styles.backgroundContainer}>
+          {canBackgrounds}
+          <div className={styles.can_image_container}>{canImages}</div>
+        </div>
+        {largeCanImages}
+        <div className={styles.tabContainer}>{canTabs}</div>
       </div>
-      {largeCanImages}
-      <div className={styles.tabContainer}>{canTabs}</div>
-    </div>
+      <FlavourCarousel />
+    </>
   )
 }
 export default HomePage

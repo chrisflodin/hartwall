@@ -1,0 +1,39 @@
+.listContainer {
+  display: flex;
+  align-items: center;
+}
+
+.sliderContainer {
+  width: 100%;
+}
+
+$buttonSize: 100px;
+$buttonNegativeMargin: 60px;
+
+.listContainer > button {
+  border-style: hidden;
+  border-radius: $buttonSize * 0.5;
+  width: $buttonSize;
+  height: $buttonSize;
+  background-color: var(--dark-blue);
+  color: white;
+  z-index: 1;
+}
+
+.leftButton {
+  margin-right: -$buttonNegativeMargin;
+}
+
+.rightButton {
+  margin-left: -$buttonNegativeMargin;
+}
+
+.listContainer > button.left {
+  margin-left: -50px;
+}
+
+.itemContainer {
+  background: var(--light-blue);
+  padding: 10px;
+  margin: 10px;
+}
