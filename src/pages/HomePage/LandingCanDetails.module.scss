@@ -1,0 +1,30 @@
+.landing_can_large_image {
+}
+
+.landing_can_detail_container {
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+
+  top: 80px;
+  left: 15vw;
+  right: 8vw;
+  gap: 15vw;
+  z-index: 500;
+}
+
+.landing_can_detail_text_container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  color: var(--dark-blue);
+
+  .landing_can_detail_title {
+    font-size: 5.2rem;
+  }
+
+  .landing_can_detail_description {
+    font-size: 2.4rem;
+  }
+}

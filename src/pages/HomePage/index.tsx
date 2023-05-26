@@ -5,8 +5,8 @@ import styles from './index.module.scss'
 import HeroContext from '../../context/HeroContext'
 import LandingCanBackgroundTab from './LandingCanBackgroundTab'
 import LandingCanImage from './LandingCanImage'
-import LandingCanBackgroundDetail from './LandingCanLargeImage'
-import LandingCanLargeImage from './LandingCanLargeImage'
+import LandingCanBackgroundDetail from './LandingCanDetails'
+import LandingCanLargeImage from './LandingCanDetails'
 
 function HomePage() {
   const { canMap, anyHovered, updateHoveredCan }: IHeroContext = useContext(HeroContext)
@@ -40,7 +40,13 @@ function HomePage() {
   ))
 
   const largeCanImages = Array.from(canMap.entries()).map(([index, can]) => (
-    <LandingCanLargeImage anyHovered={anyHovered} flavour={can.flavour} hovered={can.hovered} index={index} />
+    <LandingCanLargeImage
+      text={can.text}
+      anyHovered={anyHovered}
+      flavour={can.flavour}
+      hovered={can.hovered}
+      index={index}
+    />
   ))
 
   return (
