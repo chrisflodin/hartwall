@@ -3,8 +3,8 @@ import { FLAVOURS } from '../../consts/flavours'
 import styles from './index.module.scss'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LeftIcon, RightIcon } from '../SVGs/Icons'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+// import { Swiper, SwiperSlide } from 'swiper/react'
+// import 'swiper/css'
 
 function FlavourCarousel() {
   const [flavours, setFlavours] = useState([...FLAVOURS])
