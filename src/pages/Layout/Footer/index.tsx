@@ -1,6 +1,4 @@
 import styles from './index.module.scss'
-import FooterLinks from './FooterLinks'
-import FooterSocialLinks from './FooterSocialLinks'
 import { FacebookLogo, InstagramLogo } from '../../../components/SVGs/Logos'
 import { motion } from 'framer-motion'
 

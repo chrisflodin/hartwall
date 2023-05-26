@@ -1,16 +1,24 @@
 .can_tab_container {
-  height: 60px;
+  height: 80px;
   width: 25%;
-  background-color: black;
-  flex-grow: 1;
-  flex-shrink: 1;
+  justify-content: center;
 }
 
-.landing_can_image {
-  height: 50%;
+.can_tab_bar {
+  height: 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
 }
 
-.can_image_wrapper {
-  background-color: blue;
-  width: 25%;
+.can_tab_img_wrapper {
+  display: flex;
+  justify-content: center;
 }
+
+// .landing_can_image {
+//   height: 50%;
+// }
+
+// .can_image_wrapper {
+//   width: 25%;
+// }
