@@ -20,7 +20,7 @@ function Footer() {
       </div>
       <div className={styles.bottomFooter}>
         <p>Me virkistämme</p>
-        <p>Soumea.</p>
+        <p>Suomea.</p>
       </div>
     </>
   )
