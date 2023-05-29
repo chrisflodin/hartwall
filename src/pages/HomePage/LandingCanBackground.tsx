@@ -3,15 +3,23 @@ import styles from './LandingCanBackground.module.scss'
 import { useContext, useState } from 'react'
 import { IHeroContext } from '../../types/HeroContext'
 import HeroContext from '../../context/HeroContext'
+import { AppleSVGBackdrop } from '../../components/SVGs/Backdrops'
 
 interface LandingCanBackgroundProps {
   backgroundColor: string
   index: number
   hovered: boolean
   staticBackground?: boolean
+  BackgroundSVG: React.FunctionComponent | React.ComponentClass
 }
 
-function LandingCanBackground({ backgroundColor, index, hovered, staticBackground }: LandingCanBackgroundProps) {
+function LandingCanBackground({
+  backgroundColor,
+  index,
+  hovered,
+  staticBackground,
+  BackgroundSVG,
+}: LandingCanBackgroundProps) {
   const { updateHoveredCan, noneHovered }: IHeroContext = useContext(HeroContext)
 
   const styling = {
@@ -42,7 +50,9 @@ function LandingCanBackground({ backgroundColor, index, hovered, staticBackgroun
         initial={!staticBackground ? initial : {}}
         onHoverStart={(e) => updateHoveredCan(index, true)}
         onHoverEnd={(e) => updateHoveredCan(index, false)}
-      ></motion.div>
+      >
+        <BackgroundSVG />
+      </motion.div>
     </>
   )
 }

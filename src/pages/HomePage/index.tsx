@@ -13,10 +13,13 @@ function HomePage() {
   const { canMap, anyHovered, updateHoveredCan }: IHeroContext = useContext(HeroContext)
 
   const canBackgrounds = Array.from(canMap.entries()).map(([index, can]) => (
-    <LandingCanBackground hovered={can.hovered} backgroundColor={can.primaryColor} index={index} key={index} />
-  ))
-  const canStaticBackgrounds = Array.from(canMap.entries()).map(([index, can]) => (
-    <LandingCanBackground hovered={can.hovered} backgroundColor={can.primaryColor} index={index} key={index} />
+    <LandingCanBackground
+      BackgroundSVG={can.backgroundSVG}
+      hovered={can.hovered}
+      backgroundColor={can.primaryColor}
+      index={index}
+      key={index}
+    />
   ))
 
   const canTabs = Array.from(canMap.entries()).map(([index, can]) => (

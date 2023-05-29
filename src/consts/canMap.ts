@@ -1,3 +1,5 @@
+import { AppleSVGBackdrop, PearSVGBackdrop, Raspberry, StrawberrySVGBackdrop } from '../components/SVGs/Backdrops'
+
 export enum Colors {
   YELLOW = '#fffe00',
   GREEN = '#30feb3',
@@ -13,6 +15,7 @@ export interface CanMapValue {
     title: string
     description: string
   }
+  backgroundSVG: React.FunctionComponent | React.ComponentClass
 }
 
 export const CanMap = new Map<number, CanMapValue>()
@@ -26,18 +29,9 @@ CanMap.set(0, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
+  backgroundSVG: AppleSVGBackdrop,
 })
 CanMap.set(1, {
-  primaryColor: Colors.GREEN,
-  hovered: false,
-  flavour: 'Pear',
-  text: {
-    title: 'Hartwall Limonadi Omena',
-    description:
-      'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
-  },
-})
-CanMap.set(2, {
   primaryColor: Colors.BLUE,
   hovered: false,
   flavour: 'Raspberry',
@@ -46,6 +40,18 @@ CanMap.set(2, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
+  backgroundSVG: Raspberry,
+})
+CanMap.set(2, {
+  primaryColor: Colors.GREEN,
+  hovered: false,
+  flavour: 'Pear',
+  text: {
+    title: 'Hartwall Limonadi Omena',
+    description:
+      'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
+  },
+  backgroundSVG: PearSVGBackdrop,
 })
 CanMap.set(3, {
   primaryColor: Colors.RED,
@@ -56,4 +62,5 @@ CanMap.set(3, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
+  backgroundSVG: StrawberrySVGBackdrop,
 })
