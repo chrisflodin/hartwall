@@ -7,12 +7,17 @@ import { BottleMap } from '../consts/bottleMap'
 const HeroContext = createContext<any>(null)
 
 export const HeroProvider = ({ children }: { children: JSX.Element | undefined }) => {
+  const [hasInteracted, setHasInteracted] = useState<boolean>(false)
   const [productMap, setProductMap] = useState<Map<number, BrewMapValue>>(CanMap)
   const [productType, setProductType] = useState<ProductType>(ProductType.CAN)
   const [noneHovered, setNoneHovered] = useState<boolean>(true)
   const [anyHovered, setAnyHovered] = useState<boolean>(false)
 
   const updateHoveredCan = (index: number, hovered: boolean) => {
+    if (!hasInteracted) {
+      setHasInteracted(true)
+      return
+    }
     const newProductMap = new Map<number, any>(productMap)
     newProductMap.set(index, { ...productMap.get(index), hovered: hovered })
 
