@@ -19,6 +19,7 @@ function FlavourCarousel() {
             <SwiperSlide key={i}>
               <div className={styles.swiperSlide}>
                 <motion.img
+                  height={340}
                   whileHover={{ scale: 1.05, cursor: 'pointer' }}
                   whileTap={{ scale: 0.95 }}
                   alt={`${i}: Can of ${flavour}`}
