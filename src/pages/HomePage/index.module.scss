@@ -53,10 +53,28 @@
     opacity: 1;
   }
 }
-.bodyParagraph {
+.bodyLemonadi {
   margin: auto;
   width: fit-content;
   font-size: 2rem;
   width: 1023px;
   padding: 40px 10px;
+  text-align: center;
+}
+
+.headerGingerJoe {
+  text-transform: uppercase;
+  color: black;
+  font-family: 'Staatliches';
+  font-size: 2.5rem;
+}
+
+.bodyGingerJoe {
+  margin: auto;
+  width: fit-content;
+  font-size: 2rem;
+  width: 1023px;
+  padding: 40px 10px;
+  color: black;
+  text-align: center;
 }

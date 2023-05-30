@@ -7,6 +7,7 @@ import LandingCanBackgroundTab from './LandingCanBackgroundTab'
 import LandingCanImage from './LandingCanImage'
 import LandingCanDetails from './LandingCanDetails'
 import FlavourCarousel from '../../components/FlavourCarousel'
+import { ProductType } from '../../consts/types'
 
 function HomePage() {
   const { productMap, anyHovered, productType, switchProductType }: IHeroContext = useContext(HeroContext)
@@ -61,17 +62,35 @@ function HomePage() {
         {largeProductImages}
         <div className={styles.tabContainer}>{productTabs}</div>
       </div>
-      <p className={styles.bodyParagraph}>
-        Hartwall Limonadit uudistuivat! Vanhojen tuttujen herkuttelujuomien reseptit on raikastettu ja rakastetut
-        Limonadit on tuotu herkullisiin 0,33l tölkkeihin. Uudistuksista huolimatta tallella on Limonadeille ominainen
-        intensiivisen herkullinen ja makea maku, joka piristää niin parhaita kuin haastavampiakin päiviä!
-      </p>
+      {productType === ProductType.CAN ? (
+        <>
+          <p className={styles.bodyLemonadi}>
+            Hartwall Limonadit uudistuivat! Vanhojen tuttujen herkuttelujuomien reseptit on raikastettu ja rakastetut
+            Limonadit on tuotu herkullisiin 0,33l tölkkeihin. Uudistuksista huolimatta tallella on Limonadeille
+            ominainen intensiivisen herkullinen ja makea maku, joka piristää niin parhaita kuin haastavampiakin päiviä!
+          </p>
+        </>
+      ) : (
+        <>
+          <h1 className={styles.headerGingerJoe}>ginger joe – kipakka inkiväärijuoma puraisee polttavasti</h1>
+          <p className={styles.bodyGingerJoe}>
+            Kipakka inkiväärijuoma on raikas ja yllättävä makunautinto, joka herättelee makunystyröitä uudella,
+            kiinnostavalla tavalla. Ginger Joe on aitoa inkivääriä sisältävä gluteeniton valmisjuoma, jonka historia
+            ulottuu 1700-luvun Lontooseen. Antaudu inkiväärin poltteelle ja testaa Ginger Joe alkoholilla tai ilman!
+          </p>
+          <h1 className={styles.headerGingerJoe} style={{ marginBottom: 15 }}>
+            GINGER JOE – TUOTTEET
+          </h1>
+        </>
+      )}
       <FlavourCarousel />
-      <p className={styles.bodyParagraph}>
-        Hartwall Limonadi on ollut suomalaisten tukena arjessa jo vuosikymmeniä. Limonadi on kruunannut parhaat päivät
-        ja auttanut selättämään haastavimmat hetket. Näissä hetkissä kaipaamme jotain tuttua ja turvallista. Jotakin,
-        joka tekee päivästämme pisaran verran makeamman. Ja näihin hetkiin kelpaa vain Hartwall Limonadi.
-      </p>
+      {productType === ProductType.CAN && (
+        <p className={styles.bodyLemonadi}>
+          Hartwall Limonadi on ollut suomalaisten tukena arjessa jo vuosikymmeniä. Limonadi on kruunannut parhaat päivät
+          ja auttanut selättämään haastavimmat hetket. Näissä hetkissä kaipaamme jotain tuttua ja turvallista. Jotakin,
+          joka tekee päivästämme pisaran verran makeamman. Ja näihin hetkiin kelpaa vain Hartwall Limonadi.
+        </p>
+      )}
     </>
   )
 }

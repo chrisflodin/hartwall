@@ -8,10 +8,10 @@ import 'swiper/css/navigation'
 import styles from './index.module.scss'
 import { IHeroContext } from '../../types/HeroContext'
 import HeroContext from '../../context/HeroContext'
-import { BrewMapValue } from '../../consts/types'
+import { BrewMapValue, ProductType } from '../../consts/types'
 
 function FlavourCarousel() {
-  const { productMap }: IHeroContext = useContext(HeroContext)
+  const { productMap, productType }: IHeroContext = useContext(HeroContext)
 
   function createKeys(map: Map<number, BrewMapValue>): number[] {
     return [...Array.from(map.keys()), ...Array.from(map.keys())]
@@ -26,20 +26,25 @@ function FlavourCarousel() {
     <div className={styles.swiperContainer}>
       <Swiper modules={[Navigation]} spaceBetween={0} slidesPerView={3} navigation loop>
         {productKeys &&
-          productKeys.map((i) => {
+          productKeys.map((i, key) => {
             return (
-              <SwiperSlide key={i}>
+              <SwiperSlide key={key}>
                 <div className={styles.swiperSlide}>
                   <div className={styles.swiperImg}>
                     <motion.img
                       height={340}
                       whileHover={{ scale: 1.05, cursor: 'pointer' }}
                       whileTap={{ scale: 0.95 }}
-                      alt={`${i}: Can of ${productMap.get(i)?.flavour}`}
+                      alt={`${key}: Can of ${productMap.get(i)?.flavour}`}
                       src={`../../assets/images/${productMap.get(i)?.flavour}.png`}
                     />
                   </div>
-                  <p className={styles.flavourTitle}>{productMap.get(i)?.text.title}</p>
+                  <p
+                    style={{ color: productType === ProductType.BOTTLE ? 'black' : '' }}
+                    className={styles.flavourTitle}
+                  >
+                    {productMap.get(i)?.text.title}
+                  </p>
                 </div>
               </SwiperSlide>
             )

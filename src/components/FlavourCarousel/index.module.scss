@@ -13,7 +13,7 @@ $canMargin: 10px;
   min-width: 0;
 
   --swiper-navigation-size: 4rem;
-  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-top-offset: 48%;
   --swiper-navigation-sides-offset: 10px;
   --swiper-navigation-color: var(--dark-blue);
 }
@@ -38,4 +38,6 @@ $canMargin: 10px;
 .flavourTitle {
   font-size: 2rem;
   font-weight: bold;
+  padding: 0 10px;
+  text-align: center;
 }

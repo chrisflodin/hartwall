@@ -21,7 +21,7 @@ CanMap.set(1, {
   text: {
     title: 'Hartwall Limonadi Vadelma',
     description:
-      'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
+      'Herkullisen raikas Vadelmalimonadi, joka tyydyttää makeanhimon ja tekee päivästä kuin päivästä pisaran verran makeamman!',
   },
   background: Raspberry,
 })
@@ -32,7 +32,7 @@ CanMap.set(2, {
   text: {
     title: 'Hartwall Limonadi Päärynä',
     description:
-      'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
+      'Raikas, mutta intensiivisen makea Päärynälimonadi kruunaa kaikenlaiset herkkuhetket ja tekee päivästä kuin päivästä pisaran verran makeamman!',
   },
   background: PearSVGBackdrop,
 })
@@ -43,7 +43,7 @@ CanMap.set(3, {
   text: {
     title: 'Hartwall Limonadi Mansikka',
     description:
-      'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
+      'Hartwall Limonadi-perheen herkullinen uutuusmaku 2022! Hartwall Limonadi Mansikka on raikas, mutta intensiivisen makea limonadi, jossa maistuvat kesän parhaat hetket - vaikka keskellä syksyn pimeyttä!',
   },
   background: StrawberrySVGBackdrop,
 })

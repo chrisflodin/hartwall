@@ -26,7 +26,7 @@ function Navbar() {
       <div className={styles.sideNav}>
         <p className={styles.link}>Joumat</p>
         <p className={styles.link}>Yritus</p>
-        <p className={styles.link}>Vastuulisuus</p>
+        <p className={styles.link}>Vastuullisuus</p>
         <p className={styles.link}>Inspiroidu</p>
       </div>
       <Link to="/">
