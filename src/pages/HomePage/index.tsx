@@ -61,7 +61,17 @@ function HomePage() {
         {largeProductImages}
         <div className={styles.tabContainer}>{productTabs}</div>
       </div>
+      <p className={styles.bodyParagraph}>
+        Hartwall Limonadit uudistuivat! Vanhojen tuttujen herkuttelujuomien reseptit on raikastettu ja rakastetut
+        Limonadit on tuotu herkullisiin 0,33l tölkkeihin. Uudistuksista huolimatta tallella on Limonadeille ominainen
+        intensiivisen herkullinen ja makea maku, joka piristää niin parhaita kuin haastavampiakin päiviä!
+      </p>
       <FlavourCarousel />
+      <p className={styles.bodyParagraph}>
+        Hartwall Limonadi on ollut suomalaisten tukena arjessa jo vuosikymmeniä. Limonadi on kruunannut parhaat päivät
+        ja auttanut selättämään haastavimmat hetket. Näissä hetkissä kaipaamme jotain tuttua ja turvallista. Jotakin,
+        joka tekee päivästämme pisaran verran makeamman. Ja näihin hetkiin kelpaa vain Hartwall Limonadi.
+      </p>
     </>
   )
 }

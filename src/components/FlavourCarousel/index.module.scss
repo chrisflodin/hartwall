@@ -3,8 +3,6 @@ $canPadding: 10px;
 $canMargin: 10px;
 
 .swiperContainer {
-  align-self: center;
-
   width: ($canSize + $canPadding * 2 + $canMargin * 2) * 3;
   max-width: 100%;
   max-height: 100vh;
@@ -16,14 +14,25 @@ $canMargin: 10px;
 
   --swiper-navigation-size: 4rem;
   --swiper-navigation-top-offset: 50%;
-  --swiper-navigation-sides-offset: 0;
+  --swiper-navigation-sides-offset: 10px;
   --swiper-navigation-color: var(--dark-blue);
 }
 
 .swiperSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiperImg {
   width: fit-content;
   background: var(--light-blue);
   max-width: 200;
   margin: $canPadding;
   padding: $canMargin;
+}
+
+.flavourTitle {
+  font-size: 2rem;
+  font-weight: bold;
 }
