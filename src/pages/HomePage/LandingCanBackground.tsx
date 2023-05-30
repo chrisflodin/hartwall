@@ -3,7 +3,7 @@ import styles from './LandingCanBackground.module.scss'
 import { useContext, useState } from 'react'
 import { IHeroContext } from '../../types/HeroContext'
 import HeroContext from '../../context/HeroContext'
-import { AppleSVGBackdrop } from '../../components/SVGs/Backdrops'
+import { animationDuration } from './animation-config'
 
 interface LandingCanBackgroundProps {
   backgroundColor: string
@@ -41,6 +41,8 @@ function LandingCanBackground({
     zIndex: 2,
   }
 
+  const duration = animationDuration * 0.3
+
   return (
     <>
       <motion.div
@@ -50,6 +52,7 @@ function LandingCanBackground({
         initial={!staticBackground ? initial : {}}
         onHoverStart={(e) => updateHoveredCan(index, true)}
         onHoverEnd={(e) => updateHoveredCan(index, false)}
+        transition={{ duration }}
       >
         <BackgroundSVG />
       </motion.div>

@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import styles from './LandingCanDetails.module.scss'
+import { animationDuration } from './animation-config'
 
 interface LandingCanDetailsProps {
   flavour: string
@@ -12,11 +13,13 @@ interface LandingCanDetailsProps {
   }
 }
 
+const duration = 0.3 * animationDuration
+
 function LandingCanDetails({ flavour, index, hovered, anyHovered, text }: LandingCanDetailsProps) {
   const animate = { opacity: hovered ? 1 : 0, y: hovered ? 20 : 0 }
   const initial = { opacity: 0 }
   const exit = { opacity: 0 }
-  const transition = { duration: anyHovered ? 0.3 : 0.3, delay: anyHovered ? 0.3 : 0, ease: 'easeOut' }
+  const transition = { duration: anyHovered ? duration : duration, delay: anyHovered ? duration : 0, ease: 'easeOut' }
 
   return (
     <div className={styles.landing_can_detail_container}>

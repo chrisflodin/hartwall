@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import styles from './LandingCanImage.module.scss'
+import { animationDuration } from './animation-config'
 
 interface LandingCanImageProps {
   backgroundColor: string
@@ -8,6 +9,8 @@ interface LandingCanImageProps {
   flavour: string
   anyHovered: boolean
 }
+
+const duration = 0.2 * (Math.random() + 0.7) * animationDuration
 
 function LandingCanImage({ backgroundColor, index, hovered, flavour, anyHovered }: LandingCanImageProps) {
   console.log({ anyHovered })
@@ -20,7 +23,7 @@ function LandingCanImage({ backgroundColor, index, hovered, flavour, anyHovered 
         key={index}
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: anyHovered ? 0 : 1, y: anyHovered ? 50 : 0 }}
-        transition={{ duration: 0.2 * (Math.random() + 0.7), ease: 'easeIn' }}
+        transition={{ duration, ease: 'easeIn' }}
       />
     </div>
   )
