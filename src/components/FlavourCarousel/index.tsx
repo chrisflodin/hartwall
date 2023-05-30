@@ -1,22 +1,32 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { FLAVOURS } from '../../consts/flavours'
-import { CanMap } from '../../consts/canMap'
 import { motion } from 'framer-motion'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import styles from './index.module.scss'
+import { IHeroContext } from '../../types/HeroContext'
+import HeroContext from '../../context/HeroContext'
+import { BrewMapValue } from '../../consts/types'
 
 function FlavourCarousel() {
-  let canMapKeys = Array.from(CanMap.keys())
-  canMapKeys = [...canMapKeys, ...canMapKeys]
+  const { productMap }: IHeroContext = useContext(HeroContext)
+
+  function createKeys(map: Map<number, BrewMapValue>): number[] {
+    return [...Array.from(map.keys()), ...Array.from(map.keys())]
+  }
+
+  const [productKeys, setProductKeys] = useState(createKeys(productMap))
+  useEffect(() => {
+    setProductKeys(createKeys(productMap))
+  }, [productMap])
 
   return (
     <div className={styles.swiperContainer}>
       <Swiper modules={[Navigation]} spaceBetween={0} slidesPerView={3} navigation loop>
-        {canMapKeys &&
-          canMapKeys.map((i) => {
+        {productKeys &&
+          productKeys.map((i) => {
             return (
               <SwiperSlide key={i}>
                 <div className={styles.swiperSlide}>
@@ -25,11 +35,11 @@ function FlavourCarousel() {
                       height={340}
                       whileHover={{ scale: 1.05, cursor: 'pointer' }}
                       whileTap={{ scale: 0.95 }}
-                      alt={`${i}: Can of ${CanMap.get(i)?.flavour}`}
-                      src={`../../assets/images/${CanMap.get(i)?.flavour}.png`}
+                      alt={`${i}: Can of ${productMap.get(i)?.flavour}`}
+                      src={`../../assets/images/${productMap.get(i)?.flavour}.png`}
                     />
                   </div>
-                  <p className={styles.flavourTitle}>{CanMap.get(i)?.text.title}</p>
+                  <p className={styles.flavourTitle}>{productMap.get(i)?.text.title}</p>
                 </div>
               </SwiperSlide>
             )

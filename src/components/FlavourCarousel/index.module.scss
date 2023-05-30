@@ -25,9 +25,12 @@ $canMargin: 10px;
 }
 
 .swiperImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
   background: var(--light-blue);
-  max-width: 200;
+  width: 321px;
   margin: $canPadding;
   padding: $canMargin;
 }
