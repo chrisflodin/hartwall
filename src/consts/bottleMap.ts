@@ -44,7 +44,7 @@ BottleMap.set(3, {
   text: {
     title: 'STONE’S GINGER JOE NON-ALCOHOLIC 33 CL',
     description:
-      'Perinteinen Ginger Joe 4 % on raikas, tyylikäs ja helppo valinta arkeen ja juhlaan. Klassikko, josta liekkiviikset tunnetaan! Kiehtovasti kielellä kuumotteleva inkivääri saa nostetta makeudesta, joka tekee Ginger Joesta raikkaan ja virkistävän juomaelämyksen. Kuumottelevan kupliva inkiväärijuoma toimii sekä jääkylmänä että höyryäväksi lämmitettynä ja taipuu moniin drinkkeihin. Testaa sushin tai muiden aasialaistyyppisten ruokien kanssa tai koppaa kaveriksi rennolle piknikille.',
+      'Alkoholiton Ginger Joe 0 % on tyylikäs alkoholiton inkiväärijuoma, jonka kipakkuus ei jätä sijaa arvailulle. Kiehtovasti kielellä kuumotteleva inkivääri saa nostetta makeudesta, joka tekee Ginger Joesta raikkaan ja virkistävän juomaelämyksen. Kuumottelevan kupliva inkiväärijuoma on edukseen myös alkoholittomana ja täyttää suoraselkäisesti juhlajuoman tunnusmerkit – täysin ilman alkoholia. Testaa ruokajuomana sushin tai muiden aasialaistyyppisten ruokien kanssa ja kata pöytään skarpiksi vaihtoehdoksi alkoholille.',
   },
   background: BubbleBackDrop,
 })

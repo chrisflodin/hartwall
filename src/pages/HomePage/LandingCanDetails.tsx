@@ -27,6 +27,11 @@ function LandingCanDetails({ flavour, index, hovered, anyHovered, text, productT
     color: productType === ProductType.CAN ? '#231e87' : 'white',
   }
 
+  const headerFont = {
+    ...detailContainerStyle,
+    fontFamily: productType === ProductType.CAN ? 'Spicy Rice' : 'Staatliches',
+  }
+
   return (
     <div style={detailContainerStyle} className={styles.landing_can_detail_container}>
       <AnimatePresence>
@@ -48,7 +53,9 @@ function LandingCanDetails({ flavour, index, hovered, anyHovered, text, productT
           exit={exit}
           transition={transition}
         >
-          <h1 className={styles.landing_can_detail_title}>{text.title}</h1>
+          <h1 style={headerFont} className={styles.landing_can_detail_title}>
+            {text.title}
+          </h1>
           <p className={styles.landing_can_detail_description}>{text.description}</p>
         </motion.div>
       </AnimatePresence>

@@ -15,7 +15,7 @@ function CanFooter() {
             <FacebookLogo />
           </motion.div>
         </div>
-        <p>Tarjoile jäähdytettynä seurajuomana! </p>
+        <p>Nauti kylmänä hyvässä seurassa! </p>
         <img src="assets/images/FruityFooter.png" width={'100%'} className={styles.fruityImage} />
       </div>
       <div className={styles.bottomFooter}>

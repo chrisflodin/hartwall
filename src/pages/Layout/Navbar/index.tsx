@@ -36,7 +36,7 @@ function Navbar() {
         <p className={styles.link}>Ota yhteyttä</p>
         <p className={styles.link}>Ammattiliasille</p>
         <p className={styles.link}>Export</p>
-        <SearchIcon />
+        <SearchIcon color={color} />
       </div>
     </nav>
   )
