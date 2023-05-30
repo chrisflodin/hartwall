@@ -24,7 +24,7 @@ function LandingCanDetails({ flavour, index, hovered, anyHovered, text, productT
   const transition = { duration: anyHovered ? duration : duration, delay: anyHovered ? duration : 0, ease: 'easeOut' }
 
   const detailContainerStyle = {
-    color: productType === ProductType.CAN ? 'var(--dark-blue)' : 'white',
+    color: productType === ProductType.CAN ? '#231e87' : 'white',
   }
 
   return (

@@ -5,11 +5,11 @@ import styles from './index.module.scss'
 import HeroContext from '../../context/HeroContext'
 import LandingCanBackgroundTab from './LandingCanBackgroundTab'
 import LandingCanImage from './LandingCanImage'
-import LandingCanLargeImage from './LandingCanDetails'
+import LandingCanDetails from './LandingCanDetails'
 import FlavourCarousel from '../../components/FlavourCarousel'
 
 function HomePage() {
-  const { productMap, anyHovered, productType }: IHeroContext = useContext(HeroContext)
+  const { productMap, anyHovered, productType, switchProductType }: IHeroContext = useContext(HeroContext)
 
   const productBackgrounds = Array.from(productMap.entries()).map(([index, product]) => (
     <LandingCanBackground
@@ -32,18 +32,11 @@ function HomePage() {
   ))
 
   const productImages = Array.from(productMap.entries()).map(([index, product]) => (
-    <LandingCanImage
-      flavour={product.flavour}
-      hovered={product.hovered}
-      backgroundColor={product.primaryColor}
-      index={index}
-      key={index}
-      anyHovered={anyHovered}
-    />
+    <LandingCanImage flavour={product.flavour} index={index} key={index} anyHovered={anyHovered} />
   ))
 
   const largeProductImages = Array.from(productMap.entries()).map(([index, product]) => (
-    <LandingCanLargeImage
+    <LandingCanDetails
       text={product.text}
       anyHovered={anyHovered}
       flavour={product.flavour}
@@ -55,6 +48,9 @@ function HomePage() {
 
   return (
     <>
+      <button className={styles.demo_button} onClick={switchProductType}>
+        Demo: Switch product
+      </button>
       <div className={styles.heroContainer}>
         <div className={styles.backgroundContainer}>
           {productBackgrounds}

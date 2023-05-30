@@ -3,16 +3,14 @@ import styles from './LandingCanImage.module.scss'
 import { animationDuration } from './animation-config'
 
 interface LandingCanImageProps {
-  backgroundColor: string
   index: number
-  hovered: boolean
   flavour: string
   anyHovered: boolean
 }
 
 const duration = 0.2 * (Math.random() + 0.7) * animationDuration
 
-function LandingCanImage({ backgroundColor, index, hovered, flavour, anyHovered }: LandingCanImageProps) {
+function LandingCanImage({ index, flavour, anyHovered }: LandingCanImageProps) {
   return (
     <div className={styles.can_image_wrapper}>
       <motion.img
