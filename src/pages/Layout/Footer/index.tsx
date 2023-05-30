@@ -1,29 +1,18 @@
-import styles from './index.module.scss'
 import { FacebookLogo, InstagramLogo } from '../../../components/SVGs/Logos'
 import { motion } from 'framer-motion'
+import HeroContext from '../../../context/HeroContext'
+import { useContext } from 'react'
+import { IHeroContext } from '../../../types/HeroContext'
+import { ProductType } from '../../../consts/types'
+import BottleFooter from './BottleFooter'
+import CanFooter from './CanFooter'
 
 function Footer() {
-  return (
-    <>
-      <div className={styles.topFooter}>
-        <h1>LIMONADI</h1>
-        <div className={styles.socialMediaContainer}>
-          <motion.div className={styles.blueCircle} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <InstagramLogo />
-          </motion.div>
-          <motion.div className={styles.blueCircle} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <FacebookLogo />
-          </motion.div>
-        </div>
-        <p>Tarjoile jäähdytettynä seurajuomana! </p>
-        <img src="assets/images/FruityFooter.png" width={'100%'} className={styles.fruityImage} />
-      </div>
-      <div className={styles.bottomFooter}>
-        <p>Me virkistämme</p>
-        <p>Suomea.</p>
-      </div>
-    </>
-  )
+  const { productType }: IHeroContext = useContext(HeroContext)
+
+  if (productType === ProductType.BOTTLE) return <BottleFooter />
+
+  return <CanFooter />
 }
 
 export default Footer

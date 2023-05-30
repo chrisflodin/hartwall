@@ -1,0 +1,87 @@
+.topFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  z-index: 1;
+}
+
+.topFooter > h1 {
+  font-family: 'Staatliches';
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  z-index: 1;
+  color: black;
+}
+
+.topFooter > p {
+  font-family: 'Barlow';
+  font-weight: 400;
+  font-size: 1.5rem;
+  z-index: 1;
+  color: black;
+}
+
+.socialMediaContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+$circle-radius: 35px;
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: $circle-radius * 2;
+  height: $circle-radius * 2;
+  border-radius: $circle-radius;
+  margin: 20px;
+  z-index: 1;
+}
+
+.backgroundImage {
+  margin-top: -220px;
+  z-index: -3;
+}
+
+.bottleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: -250px 0 -50px 0;
+}
+
+.bottles {
+  position: absolute;
+  top: -100px;
+}
+
+.bottle {
+  margin: 0 10px;
+  z-index: -1;
+}
+
+.bottomFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 800px;
+  background-color: var(--dark-blue);
+  padding-top: 10rem;
+}
+
+.bottomFooter > p {
+  color: white;
+  font-size: 12rem;
+  margin-bottom: -7rem;
+}
