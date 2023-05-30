@@ -1,7 +1,7 @@
 import styles from './index.module.scss'
 
 export function BubbleBackDrop() {
-  return <img className={styles.bubble_img} src="../../../public/assets/images/ginger_joe_background_img.png"></img>
+  return <img className={styles.bubble_img} src="../../assets/images/ginger_joe_background_img.png"></img>
 }
 
 export function AppleSVGBackdrop() {

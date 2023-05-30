@@ -7,14 +7,13 @@
 
 .topFooter > h1 {
   font-family: 'Spicy Rice';
-  font-size: 20rem;
+  font-size: 12rem;
   margin-bottom: -40px;
   z-index: 1;
 }
 
 .topFooter > p {
-  margin-top: 10px;
-  font-size: 4rem;
+  font-size: 3rem;
   z-index: 1;
 }
 
@@ -24,7 +23,7 @@
   justify-content: center;
 }
 
-$circle-radius: 60px;
+$circle-radius: 35px;
 
 .blueCircle {
   display: flex;
@@ -39,7 +38,7 @@ $circle-radius: 60px;
 }
 
 .fruityImage {
-  margin-top: -350px;
+  margin-top: -200px;
 }
 
 .bottomFooter {
