@@ -7,8 +7,8 @@ import { BottleMap } from '../consts/bottleMap'
 const HeroContext = createContext<any>(null)
 
 export const HeroProvider = ({ children }: { children: JSX.Element | undefined }) => {
-  const [productMap, setProductMap] = useState<Map<number, BrewMapValue>>(CanMap)
-  const [productType, setProductType] = useState<ProductType>(ProductType.CAN)
+  const [productMap, setProductMap] = useState<Map<number, BrewMapValue>>(BottleMap)
+  const [productType, setProductType] = useState<ProductType>(ProductType.BOTTLE)
   const [noneHovered, setNoneHovered] = useState<boolean>(true)
   const [anyHovered, setAnyHovered] = useState<boolean>(false)
 
@@ -35,7 +35,6 @@ export const HeroProvider = ({ children }: { children: JSX.Element | undefined }
   }
 
   const switchProductType = () => {
-    console.log('switching product type')
     if (productType === ProductType.CAN) {
       setProductType(ProductType.BOTTLE)
       setProductMap(BottleMap)

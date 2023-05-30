@@ -13,7 +13,8 @@ function HomePage() {
 
   const productBackgrounds = Array.from(productMap.entries()).map(([index, product]) => (
     <LandingCanBackground
-      BackgroundSVG={product.backgroundSVG ? product.backgroundSVG : null}
+      productType={productType}
+      Background={product.background ? product.background : null}
       hovered={product.hovered}
       backgroundColor={product.primaryColor}
       index={index}
@@ -27,6 +28,7 @@ function HomePage() {
       hovered={product.hovered}
       backgroundColor={product.primaryColor}
       index={index}
+      productType={productType}
       key={index}
     />
   ))

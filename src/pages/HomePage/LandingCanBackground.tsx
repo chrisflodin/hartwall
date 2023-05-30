@@ -4,13 +4,15 @@ import { useContext, useState } from 'react'
 import { IHeroContext } from '../../types/HeroContext'
 import HeroContext from '../../context/HeroContext'
 import { animationDuration } from './animation-config'
+import { ProductType } from '../../consts/types'
 
 interface LandingCanBackgroundProps {
   backgroundColor: string
   index: number
   hovered: boolean
   staticBackground?: boolean
-  BackgroundSVG: React.FunctionComponent | React.ComponentClass | null
+  Background: React.FunctionComponent | React.ComponentClass | null
+  productType: ProductType
 }
 
 function LandingCanBackground({
@@ -18,12 +20,14 @@ function LandingCanBackground({
   index,
   hovered,
   staticBackground,
-  BackgroundSVG,
+  Background,
+  productType,
 }: LandingCanBackgroundProps) {
   const { updateHoveredCan, noneHovered }: IHeroContext = useContext(HeroContext)
 
   const styling = {
     backgroundColor,
+    opacity: productType === ProductType.CAN ? 1 : 0.8,
   }
 
   const getWidth = () => {
@@ -54,7 +58,7 @@ function LandingCanBackground({
         onHoverEnd={(e) => updateHoveredCan(index, false)}
         transition={{ duration }}
       >
-        {BackgroundSVG && <BackgroundSVG />}
+        {Background && <Background />}
       </motion.div>
     </>
   )

@@ -23,5 +23,5 @@ export interface BrewMapValue {
     description: string
   }
   backDropOpacity?: boolean
-  backgroundSVG?: React.FunctionComponent | React.ComponentClass
+  background?: React.FunctionComponent | React.ComponentClass
 }

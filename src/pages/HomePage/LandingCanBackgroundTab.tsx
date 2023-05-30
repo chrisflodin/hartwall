@@ -1,3 +1,4 @@
+import { ProductType } from '../../consts/types'
 import styles from './LandingCanBackgroundTab.module.scss'
 import { motion } from 'framer-motion'
 
@@ -6,12 +7,22 @@ interface LandingCanBackgroundTabProps {
   index: number
   hovered: boolean
   flavour: string
+  productType: ProductType
 }
 
-function LandingCanBackgroundTab({ backgroundColor, flavour, index, hovered }: LandingCanBackgroundTabProps) {
+function LandingCanBackgroundTab({
+  backgroundColor,
+  flavour,
+  index,
+  hovered,
+  productType,
+}: LandingCanBackgroundTabProps) {
   const styling = {
     backgroundColor,
   }
+
+  const productBaseWidth = productType === ProductType.CAN ? 40 : 12
+  const productWidth = hovered ? productBaseWidth * 1.125 : productBaseWidth
 
   return (
     <>
@@ -22,8 +33,8 @@ function LandingCanBackgroundTab({ backgroundColor, flavour, index, hovered }: L
             alt={`Can of ${flavour}`}
             src={`../../assets/images/${flavour}.png`}
             key={index}
-            animate={{ width: hovered ? '45px' : '40px', opacity: hovered ? 1 : 0.3 }}
-            initial={{ width: '40px', opacity: 0.3 }}
+            animate={{ width: productWidth, opacity: hovered ? 1 : 0.3 }}
+            initial={{ width: productBaseWidth, opacity: 0.3 }}
             exit={{ opacity: 0 }}
           />
         </div>

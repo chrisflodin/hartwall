@@ -12,7 +12,7 @@ CanMap.set(0, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
-  backgroundSVG: AppleSVGBackdrop,
+  background: AppleSVGBackdrop,
 })
 CanMap.set(1, {
   primaryColor: Colors.BLUE,
@@ -23,7 +23,7 @@ CanMap.set(1, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
-  backgroundSVG: Raspberry,
+  background: Raspberry,
 })
 CanMap.set(2, {
   primaryColor: Colors.GREEN,
@@ -34,7 +34,7 @@ CanMap.set(2, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
-  backgroundSVG: PearSVGBackdrop,
+  background: PearSVGBackdrop,
 })
 CanMap.set(3, {
   primaryColor: Colors.RED,
@@ -45,5 +45,5 @@ CanMap.set(3, {
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
-  backgroundSVG: StrawberrySVGBackdrop,
+  background: StrawberrySVGBackdrop,
 })

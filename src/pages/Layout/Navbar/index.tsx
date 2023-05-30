@@ -4,16 +4,25 @@ import styles from './index.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import classNames from 'classnames'
+import { IHeroContext } from '../../../types/HeroContext'
+import { useContext } from 'react'
+import HeroContext from '../../../context/HeroContext'
+import { ProductType } from '../../../consts/types'
 
 function Navbar() {
-  let location = useLocation()
-
   const cx = classNames({
     [`${styles.navbarContainer}`]: true,
   })
 
+  const { productType }: IHeroContext = useContext(HeroContext)
+  const color = productType === ProductType.CAN ? '#231e87' : 'white'
+
+  const styling = {
+    color,
+  }
+
   return (
-    <nav className={cx}>
+    <nav style={styling} className={cx}>
       <div className={styles.sideNav}>
         <p className={styles.link}>Joumat</p>
         <p className={styles.link}>Yritis</p>
@@ -21,7 +30,7 @@ function Navbar() {
         <p className={styles.link}>Inspiroidu</p>
       </div>
       <Link to="/">
-        <HartwallLogo className={styles.hartwallLogo} />
+        <HartwallLogo color={color} className={styles.hartwallLogo} />
       </Link>
       <div className={styles.sideNav}>
         <p className={styles.link}>Ota yhteyttä</p>
