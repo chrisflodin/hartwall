@@ -2,6 +2,8 @@ import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
 import styling from './index.module.scss'
 import NavBar from './Navbar'
+import useResolutionSupported from '../../hooks/useResolutionSupported'
+import ResolutionNotSupported from './ResolutionNotSupported'
 
 const { navStyle, footerStyle, contentStyle, mainStyle } = styling
 
@@ -10,6 +12,8 @@ interface LayoutProps {
 }
 
 function Layout() {
+  const resolutionSupported = useResolutionSupported(880)
+  if (!resolutionSupported) return <ResolutionNotSupported />
   return (
     <>
       <NavBar />
