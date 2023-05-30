@@ -19,7 +19,7 @@ CanMap.set(1, {
   hovered: false,
   flavour: 'Raspberry',
   text: {
-    title: 'Hartwall Limonadi Omena',
+    title: 'Hartwall Limonadi Vadelma',
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
@@ -30,7 +30,7 @@ CanMap.set(2, {
   hovered: false,
   flavour: 'Pear',
   text: {
-    title: 'Hartwall Limonadi Omena',
+    title: 'Hartwall Limonadi Päärynä',
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },
@@ -41,7 +41,7 @@ CanMap.set(3, {
   hovered: false,
   flavour: 'Strawberry',
   text: {
-    title: 'Hartwall Limonadi Omena',
+    title: 'Hartwall Limonadi Mansikka',
     description:
       'Ikoninen Hartwallin Omenalimonadi on pehmeä ja tasapainoinen, omenan makuinen limonadi. Omenalimonadissa on matala hiilihappotaso sekä uniikki maku, jota suomalaiset ovat rakastaneet jo vuosikymmeniä.',
   },

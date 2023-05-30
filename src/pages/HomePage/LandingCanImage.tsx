@@ -14,6 +14,7 @@ function LandingCanImage({ index, flavour, anyHovered }: LandingCanImageProps) {
   return (
     <div className={styles.can_image_wrapper}>
       <motion.img
+        height={350}
         alt={`Can of ${flavour}`}
         src={`../../assets/images/${flavour}.png`}
         key={index}
