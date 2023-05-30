@@ -1,24 +1,7 @@
 import { AppleSVGBackdrop, PearSVGBackdrop, Raspberry, StrawberrySVGBackdrop } from '../components/SVGs/Backdrops'
+import { BrewMapValue, Colors } from './types'
 
-export enum Colors {
-  YELLOW = '#fffe00',
-  GREEN = '#30feb3',
-  BLUE = '#3deeff',
-  RED = '#fe1f27',
-}
-
-export interface CanMapValue {
-  primaryColor: Colors
-  hovered: boolean
-  flavour: string
-  text: {
-    title: string
-    description: string
-  }
-  backgroundSVG: React.FunctionComponent | React.ComponentClass
-}
-
-export const CanMap = new Map<number, CanMapValue>()
+export const CanMap = new Map<number, BrewMapValue>()
 
 CanMap.set(0, {
   primaryColor: Colors.YELLOW,

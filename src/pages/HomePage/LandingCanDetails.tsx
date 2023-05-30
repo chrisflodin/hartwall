@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import styles from './LandingCanDetails.module.scss'
 import { animationDuration } from './animation-config'
+import { ProductType } from '../../consts/types'
 
 interface LandingCanDetailsProps {
   flavour: string
@@ -11,18 +12,23 @@ interface LandingCanDetailsProps {
     title: string
     description: string
   }
+  productType: ProductType
 }
 
 const duration = 0.3 * animationDuration
 
-function LandingCanDetails({ flavour, index, hovered, anyHovered, text }: LandingCanDetailsProps) {
+function LandingCanDetails({ flavour, index, hovered, anyHovered, text, productType }: LandingCanDetailsProps) {
   const animate = { opacity: hovered ? 1 : 0, y: hovered ? 20 : 0 }
   const initial = { opacity: 0 }
   const exit = { opacity: 0 }
   const transition = { duration: anyHovered ? duration : duration, delay: anyHovered ? duration : 0, ease: 'easeOut' }
 
+  const detailContainerStyle = {
+    color: productType === ProductType.CAN ? 'var(--dark-blue)' : 'white',
+  }
+
   return (
-    <div className={styles.landing_can_detail_container}>
+    <div style={detailContainerStyle} className={styles.landing_can_detail_container}>
       <AnimatePresence>
         <motion.img
           className={styles.landing_can_large_image}

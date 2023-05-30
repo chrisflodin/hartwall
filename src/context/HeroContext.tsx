@@ -1,20 +1,23 @@
 import { useState, createContext } from 'react'
 import { IHeroContext } from '../types/HeroContext'
-import { CanMap, CanMapValue } from '../consts/canMap'
+import { CanMap } from '../consts/canMap'
+import { BrewMapValue, ProductType } from '../consts/types'
+import { BottleMap } from '../consts/bottleMap'
 
 const HeroContext = createContext<any>(null)
 
 export const HeroProvider = ({ children }: { children: JSX.Element | undefined }) => {
-  const [canMap, setCanMap] = useState<Map<number, CanMapValue>>(CanMap)
+  const [productMap, setProductMap] = useState<Map<number, BrewMapValue>>(BottleMap)
+  const [productType, setProductType] = useState<ProductType>(ProductType.BOTTLE)
   const [noneHovered, setNoneHovered] = useState<boolean>(true)
   const [anyHovered, setAnyHovered] = useState<boolean>(false)
 
   const updateHoveredCan = (index: number, hovered: boolean) => {
-    const newCanMap = new Map<number, any>(canMap)
-    newCanMap.set(index, { ...canMap.get(index), hovered: hovered })
+    const newProductMap = new Map<number, any>(productMap)
+    newProductMap.set(index, { ...productMap.get(index), hovered: hovered })
 
-    const noneIsHovered = Array.from(newCanMap.values()).every((can) => !can.hovered)
-    const anyIsHovered = Array.from(newCanMap.values()).some((can) => can.hovered)
+    const noneIsHovered = Array.from(newProductMap.values()).every((can) => !can.hovered)
+    const anyIsHovered = Array.from(newProductMap.values()).some((can) => can.hovered)
 
     if (anyIsHovered) {
       setAnyHovered(true)
@@ -28,14 +31,27 @@ export const HeroProvider = ({ children }: { children: JSX.Element | undefined }
       setNoneHovered(false)
     }
 
-    setCanMap(newCanMap)
+    setProductMap(newProductMap)
+  }
+
+  const switchProductType = () => {
+    if (productType === ProductType.CAN) {
+      setProductType(ProductType.BOTTLE)
+      setProductMap(BottleMap)
+    } else {
+      setProductType(ProductType.CAN)
+      setProductMap(CanMap)
+    }
   }
 
   const providers: IHeroContext = {
-    canMap,
+    switchProductType,
+    productMap,
     updateHoveredCan,
     noneHovered,
     anyHovered,
+    productType,
+    setProductType,
   }
 
   return <HeroContext.Provider value={providers}>{children}</HeroContext.Provider>

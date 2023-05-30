@@ -10,7 +10,7 @@ interface LandingCanBackgroundProps {
   index: number
   hovered: boolean
   staticBackground?: boolean
-  BackgroundSVG: React.FunctionComponent | React.ComponentClass
+  BackgroundSVG: React.FunctionComponent | React.ComponentClass | null
 }
 
 function LandingCanBackground({
@@ -54,7 +54,7 @@ function LandingCanBackground({
         onHoverEnd={(e) => updateHoveredCan(index, false)}
         transition={{ duration }}
       >
-        <BackgroundSVG />
+        {BackgroundSVG && <BackgroundSVG />}
       </motion.div>
     </>
   )

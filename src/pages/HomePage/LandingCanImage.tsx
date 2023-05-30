@@ -13,8 +13,6 @@ interface LandingCanImageProps {
 const duration = 0.2 * (Math.random() + 0.7) * animationDuration
 
 function LandingCanImage({ backgroundColor, index, hovered, flavour, anyHovered }: LandingCanImageProps) {
-  console.log({ anyHovered })
-
   return (
     <div className={styles.can_image_wrapper}>
       <motion.img

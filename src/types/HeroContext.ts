@@ -1,8 +1,11 @@
-import { CanMapValue } from '../consts/canMap'
+import { BrewMapValue, ProductType } from '../consts/types'
 
 export interface IHeroContext {
-  canMap: Map<number, CanMapValue>
+  productMap: Map<number, BrewMapValue>
   updateHoveredCan: (index: number, hovered: boolean) => void
   noneHovered: boolean
   anyHovered: boolean
+  productType: ProductType
+  setProductType: (productType: ProductType) => void
+  switchProductType: () => void
 }
