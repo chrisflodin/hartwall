@@ -8,4 +8,6 @@ export interface IHeroContext {
   productType: ProductType
   setProductType: (productType: ProductType) => void
   switchProductType: () => void
+  isLoggedIn: boolean
+  handleLogin: (password: string) => void
 }

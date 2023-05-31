@@ -46,6 +46,7 @@ function HomePage() {
       hovered={product.hovered}
       index={index}
       productType={productType}
+      key={index}
     />
   ))
 

@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 import { IHeroContext } from '../types/HeroContext'
 import { CanMap } from '../consts/canMap'
 import { BrewMapValue, ProductType } from '../consts/types'
@@ -12,6 +12,7 @@ export const HeroProvider = ({ children }: { children: JSX.Element | undefined }
   const [productType, setProductType] = useState<ProductType>(ProductType.CAN)
   const [noneHovered, setNoneHovered] = useState<boolean>(true)
   const [anyHovered, setAnyHovered] = useState<boolean>(false)
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
 
   const updateHoveredCan = (index: number, hovered: boolean) => {
     if (!hasInteracted) {
@@ -50,6 +51,20 @@ export const HeroProvider = ({ children }: { children: JSX.Element | undefined }
     }
   }
 
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('loggedIn')
+    if (loggedIn === 'true') {
+      setIsLoggedIn(true)
+    }
+  }, [])
+
+  const handleLogin = (password: string) => {
+    if (password === 'hartwall-1836') {
+      setIsLoggedIn(true)
+      localStorage.setItem('loggedIn', 'true')
+    }
+  }
+
   const providers: IHeroContext = {
     switchProductType,
     productMap,
@@ -58,6 +73,8 @@ export const HeroProvider = ({ children }: { children: JSX.Element | undefined }
     anyHovered,
     productType,
     setProductType,
+    isLoggedIn,
+    handleLogin,
   }
 
   return <HeroContext.Provider value={providers}>{children}</HeroContext.Provider>

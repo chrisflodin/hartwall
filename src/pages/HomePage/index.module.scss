@@ -12,18 +12,11 @@
 }
 
 .backgroundContainer {
-  height: 600px;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.backgroundContainer {
   position: relative;
   height: 650px;
   width: 100%;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .can_image_container {
@@ -39,9 +32,10 @@
 
 .demo_button {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.2;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  opacity: 0.5;
   z-index: 100;
   padding: 10px;
   border-radius: 5px;

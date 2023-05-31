@@ -12,15 +12,12 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 export function Button(props: ButtonProps) {
   const { buttonColor, ...nativeProps } = props
 
-  const cx = classNames([
-    `${styles.button}`,
-    `${mapColorToCSSClassName(buttonColor)}`,
-    `${mapSizeToCSSClassName(props.size)}`,
-    `${props.className}`,
-  ])
+  const cx = classNames([`${mapColorToCSSClassName(buttonColor)}`, `${mapSizeToCSSClassName(props.size)}`], {
+    [styles.button]: true,
+  })
 
   return (
-    <button {...nativeProps} className={cx}>
+    <button style={{ border: '1px solid black' }} {...nativeProps} className={cx}>
       {props.children}
     </button>
   )
