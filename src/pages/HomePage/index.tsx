@@ -55,13 +55,15 @@ function HomePage() {
       <div className={styles.heroContainer}>
         <div className={styles.backgroundContainer}>
           {productBackgrounds}
-          <button onClick={switchProductType} className={styles.demo_button}>
-            Demo: Switch product
-          </button>
           <div className={styles.can_image_container}>{productImages}</div>
         </div>
         {largeProductImages}
-        <div className={styles.tabContainer}>{productTabs}</div>
+        <div className={styles.tabContainer}>
+          <button onClick={switchProductType} className={styles.demo_button}>
+            Demo: Switch product
+          </button>
+          {productTabs}
+        </div>
       </div>
       {productType === ProductType.CAN ? (
         <>

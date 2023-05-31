@@ -5,6 +5,8 @@ import { IHeroContext } from '../../types/HeroContext'
 import HeroContext from '../../context/HeroContext'
 import { animationDuration } from './animation-config'
 import { ProductType } from '../../consts/types'
+import { useDebounce } from '../../hooks/useDebounce'
+import { debounce } from 'debounce'
 
 interface LandingCanBackgroundProps {
   backgroundColor: string
@@ -54,8 +56,8 @@ function LandingCanBackground({
         style={styling}
         className={`${styles.landing_can_container}` + (staticBackground ? ` ${styles.absolute}` : '')}
         initial={!staticBackground ? initial : {}}
-        onHoverStart={(e) => updateHoveredCan(index, true)}
-        onHoverEnd={(e) => updateHoveredCan(index, false)}
+        onHoverStart={(e) => debounce(() => updateHoveredCan(index, true), 50)()}
+        onHoverEnd={(e) => debounce(() => updateHoveredCan(index, false), 50)()}
         transition={{ duration }}
       >
         {Background && <Background />}
