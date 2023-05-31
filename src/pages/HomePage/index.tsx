@@ -51,12 +51,12 @@ function HomePage() {
 
   return (
     <>
-      <button className={styles.demo_button} onClick={switchProductType}>
-        Demo: Switch product
-      </button>
       <div className={styles.heroContainer}>
         <div className={styles.backgroundContainer}>
           {productBackgrounds}
+          <button onClick={switchProductType} className={styles.demo_button}>
+            Demo: Switch product
+          </button>
           <div className={styles.can_image_container}>{productImages}</div>
         </div>
         {largeProductImages}

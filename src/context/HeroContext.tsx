@@ -18,6 +18,7 @@ export const HeroProvider = ({ children }: { children: JSX.Element | undefined }
       setHasInteracted(true)
       return
     }
+
     const newProductMap = new Map<number, any>(productMap)
     newProductMap.set(index, { ...productMap.get(index), hovered: hovered })
 
