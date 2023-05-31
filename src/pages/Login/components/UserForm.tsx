@@ -42,7 +42,7 @@ export const UserForm = ({ config }: UserFormProps) => {
 
   return (
     <form className={formStyle} name={title} onSubmit={handleSubmit(() => submitHandler())}>
-      <Input register={register('password')} placeholder="password" error={formErrors.password?.message} type="text" />
+      <Input register={register('password')} placeholder="password" type="text" />
       <Button type="submit">Login</Button>
       <FormError error={formErrors.password?.message}></FormError>
     </form>

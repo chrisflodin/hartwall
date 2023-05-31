@@ -76,5 +76,5 @@ export function YouTubeLogo() {
 }
 
 export function FuturiceLogo() {
-  return <img width="70px" src="../../public/assets/images/FU_Logo_black_rgb.png"></img>
+  return <img width="70px" src="../../assets/images/FU_Logo_black_rgb.png"></img>
 }
