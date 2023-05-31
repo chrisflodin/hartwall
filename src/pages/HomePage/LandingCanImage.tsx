@@ -16,14 +16,14 @@ function LandingCanImage({ index, flavour, anyHovered }: LandingCanImageProps) {
     ease: 'easeOut',
     type: 'spring',
     mass: 10 * Math.random() + 0.2,
-    damping: 30,
+    damping: 28,
   }
 
   const duration = 0.2 * (Math.random() + 0.7) * animationDuration
   const afterLoadedTransition = { duration, ease: 'easeIn' }
 
   const imageVariants = {
-    initial: { opacity: 0, y: -350 },
+    initial: { opacity: 0, y: -150 },
     onLoad: { opacity: 1, y: 0 },
     afterLoad: { opacity: anyHovered ? 0 : 1, y: anyHovered ? 50 : 0 },
   }
