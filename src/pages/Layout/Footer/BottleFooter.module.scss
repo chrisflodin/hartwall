@@ -69,19 +69,3 @@ $circle-radius: 35px;
   margin: 0 10px;
   z-index: -1;
 }
-
-.bottomFooter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 800px;
-  background-color: var(--dark-blue);
-  padding-top: 10rem;
-}
-
-.bottomFooter > p {
-  color: white;
-  font-size: 12rem;
-  margin-bottom: -7rem;
-}

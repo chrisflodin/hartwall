@@ -25,7 +25,7 @@ function Navbar() {
     <nav style={styling} className={cx}>
       <div className={styles.sideNav}>
         <p className={styles.link}>Joumat</p>
-        <p className={styles.link}>Yritus</p>
+        <p className={styles.link}>Yritys</p>
         <p className={styles.link}>Vastuullisuus</p>
         <p className={styles.link}>Inspiroidu</p>
       </div>
