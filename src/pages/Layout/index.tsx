@@ -1,14 +1,12 @@
+import { useContext } from 'react'
 import { Outlet } from 'react-router-dom'
+import HeroContext from '../../context/HeroContext'
+import useResolutionSupported from '../../hooks/useResolutionSupported'
+import { IHeroContext } from '../../types/HeroContext'
 import Footer from './Footer'
 import styling from './index.module.scss'
 import NavBar from './Navbar'
-import useResolutionSupported from '../../hooks/useResolutionSupported'
 import ResolutionNotSupported from './ResolutionNotSupported'
-import Login from '../Login/Login'
-import { LoginConfig } from '../Login/config'
-import { IHeroContext } from '../../types/HeroContext'
-import { useContext } from 'react'
-import HeroContext from '../../context/HeroContext'
 
 const { navStyle, footerStyle, contentStyle, mainStyle } = styling
 
@@ -22,7 +20,7 @@ function Layout() {
   const resolutionSupported = useResolutionSupported(880)
   if (!resolutionSupported) return <ResolutionNotSupported />
 
-  if (!isLoggedIn) return <Login config={LoginConfig} />
+  // if (!isLoggedIn) return <Login config={LoginConfig} />
 
   return (
     <>
