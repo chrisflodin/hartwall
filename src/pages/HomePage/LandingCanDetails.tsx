@@ -59,7 +59,7 @@ function LandingCanDetails({ flavour, index, hovered, anyHovered, text, productT
           </h1>
           <p className={styles.landing_can_detail_description}>{text.description}</p>
           <Button
-            style={{ pointerEvents: 'auto', backgroundColor: 'white', color: 'black' }}
+            style={{ pointerEvents: 'none', backgroundColor: 'white', color: 'black' }}
             size="large"
             color="white"
             onClick={() => {

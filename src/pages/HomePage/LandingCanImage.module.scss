@@ -1,7 +1,23 @@
 .can_image_wrapper {
-  pointer-events: none;
+  pointer-events: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 25%;
+  padding: 20px 10px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  img {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+  }
+
+  &:hover img {
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+  }
 }

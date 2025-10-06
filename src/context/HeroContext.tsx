@@ -1,8 +1,8 @@
-import { useState, createContext, useEffect } from 'react'
-import { IHeroContext } from '../types/HeroContext'
+import { createContext, useEffect, useState } from 'react'
+import { BottleMap } from '../consts/bottleMap'
 import { CanMap } from '../consts/canMap'
 import { BrewMapValue, ProductType } from '../consts/types'
-import { BottleMap } from '../consts/bottleMap'
+import { IHeroContext } from '../types/HeroContext'
 
 const HeroContext = createContext<any>(null)
 

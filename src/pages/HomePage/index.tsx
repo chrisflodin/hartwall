@@ -5,18 +5,16 @@ import HeroContext from '../../context/HeroContext'
 import { IHeroContext } from '../../types/HeroContext'
 import LandingCanBackground from './LandingCanBackground'
 import LandingCanBackgroundTab from './LandingCanBackgroundTab'
-import LandingCanDetails from './LandingCanDetails'
 import LandingCanImage from './LandingCanImage'
 import styles from './index.module.scss'
 
 function HomePage() {
-  const { productMap, anyHovered, productType, switchProductType }: IHeroContext = useContext(HeroContext)
+  const { productMap, productType, switchProductType }: IHeroContext = useContext(HeroContext)
 
   const productBackgrounds = Array.from(productMap.entries()).map(([index, product]) => (
     <LandingCanBackground
       productType={productType}
       Background={product.background ? product.background : null}
-      hovered={product.hovered}
       backgroundColor={product.primaryColor}
       index={index}
       key={index}
@@ -35,19 +33,7 @@ function HomePage() {
   ))
 
   const productImages = Array.from(productMap.entries()).map(([index, product]) => (
-    <LandingCanImage flavour={product.flavour} index={index} key={index} anyHovered={anyHovered} />
-  ))
-
-  const largeProductImages = Array.from(productMap.entries()).map(([index, product]) => (
-    <LandingCanDetails
-      text={product.text}
-      anyHovered={anyHovered}
-      flavour={product.flavour}
-      hovered={product.hovered}
-      index={index}
-      productType={productType}
-      key={index}
-    />
+    <LandingCanImage flavour={product.flavour} index={index} key={index} />
   ))
 
   return (
@@ -57,7 +43,6 @@ function HomePage() {
           {productBackgrounds}
           <div className={styles.can_image_container}>{productImages}</div>
         </div>
-        {largeProductImages}
         {/* <div className={styles.tabContainer}>
           <button onClick={switchProductType} className={styles.demo_button}>
             Demo: Switch product

@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion'
-import styles from './LandingCanBackground.module.scss'
-import { useContext, useState } from 'react'
-import { IHeroContext } from '../../types/HeroContext'
-import HeroContext from '../../context/HeroContext'
-import { animationDuration } from './animation-config'
 import { ProductType } from '../../consts/types'
-import { useDebounce } from '../../hooks/useDebounce'
-import { debounce } from 'debounce'
+import styles from './LandingCanBackground.module.scss'
 
 interface LandingCanBackgroundProps {
   backgroundColor: string
   index: number
-  hovered: boolean
   staticBackground?: boolean
   Background: React.FunctionComponent | React.ComponentClass | null
   productType: ProductType
@@ -20,23 +13,14 @@ interface LandingCanBackgroundProps {
 function LandingCanBackground({
   backgroundColor,
   index,
-  hovered,
   staticBackground,
   Background,
   productType,
 }: LandingCanBackgroundProps) {
-  const { updateHoveredCan, noneHovered }: IHeroContext = useContext(HeroContext)
-
   const styling = {
     backgroundColor,
     opacity: productType === ProductType.CAN ? 1 : 0.8,
-  }
-
-  const getWidth = () => {
-    if (hovered) return '100%'
-    if (!hovered && !noneHovered) return '0%'
-    if (noneHovered) return '25%'
-    return '25%'
+    width: '25%',
   }
 
   const initial = {
@@ -47,18 +31,12 @@ function LandingCanBackground({
     zIndex: 2,
   }
 
-  const duration = animationDuration * 0.3
-
   return (
     <>
       <motion.div
-        animate={{ width: getWidth() }}
         style={styling}
         className={`${styles.landing_can_container}` + (staticBackground ? ` ${styles.absolute}` : '')}
         initial={!staticBackground ? initial : {}}
-        onHoverStart={(e) => debounce(() => updateHoveredCan(index, true), 50)()}
-        onHoverEnd={(e) => debounce(() => updateHoveredCan(index, false), 50)()}
-        transition={{ duration }}
       >
         {Background && <Background />}
       </motion.div>
