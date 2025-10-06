@@ -74,7 +74,3 @@ export function YouTubeLogo() {
     </svg>
   )
 }
-
-export function FuturiceLogo() {
-  return <img width="70px" src="../../assets/images/FU_Logo_black_rgb.png"></img>
-}

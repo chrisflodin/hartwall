@@ -1,6 +1,6 @@
+import { HartwallLogo, InstagramLogo, TikTokLogo, TwitterLogo, YouTubeLogo } from '../../../components/SVGs/Logos'
 import styling from './FooterSocialLinks.module.scss'
 import footerStyling from './index.module.scss'
-import { HartwallLogo, InstagramLogo, TikTokLogo, YouTubeLogo, TwitterLogo } from '../../../components/SVGs/Logos'
 
 const { footerTextStyling } = footerStyling
 const { container, socialLinksContainerStyling, elementMargin } = styling
@@ -16,10 +16,6 @@ function FooterSocialLinks() {
         <InstagramLogo />
         <YouTubeLogo />
         <TikTokLogo />
-      </div>
-      <div className={footerTextStyling}>
-        <p>Smileys is a</p>
-        <p>Futurice product.</p>
       </div>
     </div>
   )

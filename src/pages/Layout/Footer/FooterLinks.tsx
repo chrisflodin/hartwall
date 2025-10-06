@@ -10,7 +10,6 @@ function FooterLinks() {
       <div className={`${footerTextStyling} ${textMarginBottomStyling}`}>
         <ul>
           <li>About</li>
-          <li>Futurice</li>
           <li>Contact us</li>
         </ul>
       </div>
