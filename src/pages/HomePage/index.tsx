@@ -1,13 +1,13 @@
 import { useContext } from 'react'
-import { IHeroContext } from '../../types/HeroContext'
-import LandingCanBackground from './LandingCanBackground'
-import styles from './index.module.scss'
-import HeroContext from '../../context/HeroContext'
-import LandingCanBackgroundTab from './LandingCanBackgroundTab'
-import LandingCanImage from './LandingCanImage'
-import LandingCanDetails from './LandingCanDetails'
 import FlavourCarousel from '../../components/FlavourCarousel'
 import { ProductType } from '../../consts/types'
+import HeroContext from '../../context/HeroContext'
+import { IHeroContext } from '../../types/HeroContext'
+import LandingCanBackground from './LandingCanBackground'
+import LandingCanBackgroundTab from './LandingCanBackgroundTab'
+import LandingCanDetails from './LandingCanDetails'
+import LandingCanImage from './LandingCanImage'
+import styles from './index.module.scss'
 
 function HomePage() {
   const { productMap, anyHovered, productType, switchProductType }: IHeroContext = useContext(HeroContext)
@@ -58,12 +58,12 @@ function HomePage() {
           <div className={styles.can_image_container}>{productImages}</div>
         </div>
         {largeProductImages}
-        <div className={styles.tabContainer}>
+        {/* <div className={styles.tabContainer}>
           <button onClick={switchProductType} className={styles.demo_button}>
             Demo: Switch product
           </button>
           {productTabs}
-        </div>
+        </div> */}
       </div>
       {productType === ProductType.CAN ? (
         <>

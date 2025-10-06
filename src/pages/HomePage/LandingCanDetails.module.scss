@@ -1,5 +1,4 @@
-.landing_can_large_image {
-}
+@import '../../styles/buyNowButton.scss';
 
 .landing_can_detail_container {
   position: absolute;
@@ -27,5 +26,6 @@
 
   .landing_can_detail_description {
     font-size: 2.4rem;
+    margin-bottom: 2rem;
   }
 }

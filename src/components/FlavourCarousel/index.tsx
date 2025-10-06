@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from 'react'
-import { FLAVOURS } from '../../consts/flavours'
 import { motion } from 'framer-motion'
+import { useContext, useEffect, useState } from 'react'
 import { Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import styles from './index.module.scss'
-import { IHeroContext } from '../../types/HeroContext'
-import HeroContext from '../../context/HeroContext'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { BrewMapValue, ProductType } from '../../consts/types'
+import HeroContext from '../../context/HeroContext'
+import { IHeroContext } from '../../types/HeroContext'
+import { Button } from '../Button'
+import styles from './index.module.scss'
 
 function FlavourCarousel() {
   const { productMap, productType }: IHeroContext = useContext(HeroContext)
@@ -45,6 +45,17 @@ function FlavourCarousel() {
                   >
                     {productMap.get(i)?.text.title}
                   </p>
+                  <Button
+                    buttonColor="green"
+                    size="medium"
+                    style={{ pointerEvents: 'auto', border: '1px solid black', color: 'black' }}
+                    onClick={() => {
+                      // TODO: Implement buy now functionality
+                      console.log(`Buy now clicked for ${productMap.get(i)?.text.title}`)
+                    }}
+                  >
+                    Buy Now
+                  </Button>
                 </div>
               </SwiperSlide>
             )

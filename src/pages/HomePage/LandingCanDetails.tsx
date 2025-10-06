@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
+import { Button } from '../../components/Button'
+import { ProductType } from '../../consts/types'
 import styles from './LandingCanDetails.module.scss'
 import { animationDuration } from './animation-config'
-import { ProductType } from '../../consts/types'
 
 interface LandingCanDetailsProps {
   flavour: string
@@ -57,6 +58,17 @@ function LandingCanDetails({ flavour, index, hovered, anyHovered, text, productT
             {text.title}
           </h1>
           <p className={styles.landing_can_detail_description}>{text.description}</p>
+          <Button
+            style={{ pointerEvents: 'auto', backgroundColor: 'white', color: 'black' }}
+            size="large"
+            color="white"
+            onClick={() => {
+              // TODO: Implement buy now functionality
+              console.log(`Buy now clicked for ${text.title}`)
+            }}
+          >
+            Buy Now
+          </Button>
         </motion.div>
       </AnimatePresence>
     </div>
